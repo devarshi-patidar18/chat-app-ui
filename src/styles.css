@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+  }
+  
+  .chat-input {
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+  }
+  
+
+  .chat-message {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 60%;
+  }
+  
+  .chat-message.mine {
+    background-color: #8e3fb5;
+    color: white;
+    margin-left: auto;
+  }
+  
+  .chat-message:not(.mine) {
+    background-color: #e0e0e0;
+    margin-right: auto;
+  }
+  
+
+  .full-width {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 0.5rem;
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

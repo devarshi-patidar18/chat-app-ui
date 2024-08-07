@@ -1,0 +1,62 @@
+<!-- <p>chat-page works!</p> -->
+
+<!-- <h2>Message</h2> -->
+<!-- <form > -->
+   <!-- <input type="text" name="sendto" [(ngModel)]="sendto" placeholder="Send to">
+   <input type="text" name="sendfrom" [(ngModel)]="sendfrom" placeholder="send from"> -->
+   <!-- <input type="text" name="message" [(ngModel)]="message"> -->
+<!-- <button  (click)="sendMessage()">Send</button> -->
+<!-- </form> -->
+
+<!-- <h3>New Message</h3> -->
+
+   <!-- @for (msg of this.dataStore.messages; track $index) {
+      {{msg}} <br>
+  } -->
+
+<div>
+  @if (this.dataStore.loginId!=2) {
+    <div style="width: 50px;height: 40px;background-color: blue;margin: 3px;color: white;padding: 3px;cursor: pointer;"
+    (click)="this.dataStore.receiverId=2">
+    Muskan
+  </div>
+  }
+  @if (this.dataStore.loginId!=3) {
+    <div style="width: 50px;height: 40px;background-color: blue;margin: 3px;color: white;padding: 3px;cursor: pointer;"
+    (click)="this.dataStore.receiverId=3">
+    Mummy
+  </div>
+  }
+  @if (this.dataStore.loginId!=1) {
+    <div style="width: 50px;height: 40px;background-color: blue;margin: 3px;color: white;padding: 3px;cursor: pointer;"
+  (click)="this.dataStore.receiverId=1">
+  Betu
+</div>
+  }
+</div>
+
+  <div class="chat-window">
+   <div class="chat-header">
+     <h2>{{this.dataStore.getReceiverName(this.dataStore.receiverId)}}</h2>
+   </div>
+   <div class="chat-messages">
+     <!-- <app-chat-message *ngFor="let message of messages" [message]="message"></app-chat-message> -->
+     @for (message of this.dataStore.messages; track $index) {
+      <div class="chat-message" [class.mine]="message.isMine">
+         <p>{{ message.text }}</p>
+       </div>
+       
+     }
+   </div>
+   <div class="chat-input">
+     <!-- <app-chat-input (sendMessage)="sendMessage($event)"></app-chat-input> -->
+     <!-- <form > -->
+      <!-- <mat-form-field class="full-width" (sendMessage)="sendMessage1($event)"> -->
+        <input  placeholder="Type a message" [(ngModel)]="message" name="message" required>
+      <!-- </mat-form-field> -->
+      <button (click)="sendMessage(message)" color="primary" type="submit">Send</button>
+    <!-- </form> -->
+    
+   </div>
+ </div>
+ 

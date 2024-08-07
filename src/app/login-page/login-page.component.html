@@ -1,0 +1,20 @@
+
+<div class="header-container">
+    <h3>Chat Application</h3>
+</div>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <h6 style="color: red;">{{responseMessage}}</h6>
+    <!-- <form> -->
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password">
+        </div>
+        <button (click)="login(username,password)" >Login</button>
+    <!-- </form> -->
+</div>
