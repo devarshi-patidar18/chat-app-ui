@@ -19,20 +19,13 @@ export class ChatPageComponent {
   sendto:string = "";
   sendfrom:string = "";
 
-  // messages = [
-    
-  // ];
 
   constructor(private chatService:ChatService,public dataStore:DataStoreService){}
 
-  // messages:any = [];
 
   ngOnInit(): void {
 
-    let msg:any = this.chatService.connect();
-    console.log("Working " + msg);
-    // this.messages.push(msg);
-    
+    this.chatService.connect();    
 
   }
 
@@ -55,11 +48,5 @@ export class ChatPageComponent {
       isMine:true
     })
   }
-
-  sendMessage1(event){
-
-  }
-
-  
 
 }

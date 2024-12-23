@@ -1,0 +1,9 @@
+.contactCss {
+    width: 50px;
+    height: 40px;
+    background-color: blue;
+    margin: 3px;
+    color: white;
+    padding: 3px;
+    cursor: pointer;
+}

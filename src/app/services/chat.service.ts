@@ -42,11 +42,14 @@ export class ChatService {
       console.log("Logged in user id");
       console.log(this.dataStore.loginId);
       this.stompClient.subscribe("/topic/return-to/"+this.dataStore.loginId,(message:Message)=>{
-        console.log("Received Message: " + message.body);
-        // let msgBody = JSON.parse(message.body);
+        console.log("Received Message: " + message);
+        let msgBody = JSON.parse(message.body);
         this.dataStore.messages.push(
           {
-            text:message.body,
+            senderName:msgBody.name,
+            senderId:msgBody.senderId,
+            receiverId:msgBody.receiverId,
+            text:msgBody.content,
             isMine:false
           }
         );
